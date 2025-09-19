@@ -1,0 +1,29 @@
+{# Это шаблон сайта #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% block title %} <title>сайт Арианны </title>{% endblock %}
+</head>
+<body bgcolor=" #FFFFE0">
+    {% block nav %}
+    <ul>
+        <li><a href="/">главная</a></if><!--Элементы списка-->
+        <li><a href="/shop">Услуги</a></if>
+        <li><a href="/about">О нас</a></if>
+        <li><a href="/news">Новости и акции</a></if>
+        <li><a href="/search">Поиск</a></if>
+        <li><a href="/login">Вход в аккаунт/Регистрация</a></if>
+        
+    </ul>
+    {% endblock %}
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    
+</body>
+</html>
