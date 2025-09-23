@@ -21,11 +21,13 @@ def index():
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html")
+    shop= productBD()
+    return render_template("shop.html", shop=shop)
 
 @app.route("/search")#Поиск
 def search():
-    return render_template("search.html")
+    shop= productBD()
+    return render_template("search.html",shop=shop)
 
 @app.route("/login") #Вход в аккаунт/Регистрация
 def login():
@@ -36,9 +38,15 @@ def login():
 def about():
     return render_template('about.html')
 
+@app.route("/basket")#о нас
+def basket():
+    shop= productBD()
+    return render_template('basket.html', shop=shop)
+
 @app.route("/news")#новости и акции
 def news():
-    return render_template('news.html')
+    shop= productBD()
+    return render_template('news.html', shop=shop)
 
 if __name__ =='__main__': #точка ввода нашей программы
     print("Сервер запущен:")
