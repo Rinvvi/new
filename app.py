@@ -16,6 +16,10 @@ def product_oneBD(id):
     listDB=cursor.execute('SELECT * FROM product where id='+id)
     return listDB.fetchall()
 
+def product_twoBD(id):
+    listDB=cursor.execute('SELECT * FROM product where id='+id)
+    return listDB.fetchall()
+
 @app.route("/")
 def index():
     shop= productBD()
@@ -28,10 +32,12 @@ def shop():
     shop= productBD()
     return render_template("shop.html", shop=shop)
 
-@app.route("/search")#Поиск
-def search():
-    shop= productBD()
+@app.route("/search/<id>")#Поиск
+def search(id):
+    shop= product_twoBD(id)
+    print(index)
     return render_template("search.html",shop=shop)
+    
 
 @app.route("/proba") #Вход в аккаунт/Регистрация
 def proba():
