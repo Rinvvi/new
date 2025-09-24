@@ -1,0 +1,63 @@
+{# Это шаблон сайта #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% block title %} <title>сайт Арианны </title>{% endblock %}
+</head>
+<body bgcolor=" #FFFFE0">
+    {% block nav %}
+
+
+
+<!-- Верхняя панель навигации -->
+<nav style="background-color: #e3e89a; padding: 15px 0; margin-bottom: 30px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <!-- Логотип -->
+        <div style="color: rgb(9, 10, 2); font-size: 24px; font-weight: bold;">
+            <a href="https://ibb.co/7NC6j27P"><img src="https://i.ibb.co/7NC6j27P/photo-5375129190325681780-y.jpg" alt="photo-5375129190325681780-y" border="0"></a> 
+        </div>
+        
+        <!-- Меню навигации -->
+        <ul style="display: flex; list-style: none; margin: 0; padding: 0; gap: 30px;">
+            <li><a href="/" style="color: white; text-decoration: none; font-size: 16px;">Главная</a></li>
+            <li><a href="/about" style="color: white; text-decoration: none; font-size: 16px;">О нас</a></li>
+            <li><a href="/news" style="color: white; text-decoration: none; font-size: 16px;">Новости и акции</a></li>
+        </ul>
+        
+        <!-- Иконки действий -->
+        <div style="display: flex; gap: 20px;">
+            <a href="/search" style="color: white; text-decoration: none; font-size: 16px;">🔍</a>
+            <a href="/basket" style="color: white; text-decoration: none; font-size: 16px;">🛒</a>
+            <a href="/proba" style="color: white; text-decoration: none; font-size: 16px;">👤</a>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+    <!--<ul>
+        <li><a href="/">главная</a></if>Элементы списка
+
+        <img src="https://i.ibb.co/p6KqBX4S/photo-5350831349151430680-y-1.jpg" width="150" height="120"> 
+        <li><a href="/shop">Услуги</a></if>
+        <li><a href="/basket">Корзина</a></if>
+        <li><a href="/about">О нас</a></if>
+        <li><a href="/news">Новости и акции</a></if>
+        <li><a href="/search">Поиск</a></if>
+        <li><a href="/proba">Вход в аккаунт/Регистрация</a></if>
+        -->
+    </ul>
+    {% endblock %}
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    
+</body>
+</html>

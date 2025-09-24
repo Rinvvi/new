@@ -9,9 +9,9 @@ def integer():
         user = request.form.get('user')
         password = request.form.get('password')
         messege = messege+user + ' ' + password
-        return render_template('proba.html',messege = messege)
+        return render_template('proba.html',messege == messege)
 
-    return render_template("proba.html",messege='Форма')
+    return render_template("proba.html",messege='Форма готова для принятия данных')
 
 if __name__=='__main__':
     print("run server")

@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template,request
 import sqlite3
 
 app = Flask(__name__)
@@ -10,6 +10,10 @@ cursor = connection.cursor()
 
 def productBD():
     listDB=cursor.execute('SELECT * FROM product')
+    return listDB.fetchall()
+
+def product_oneBD(id):
+    listDB=cursor.execute('SELECT * FROM product where id='+id)
     return listDB.fetchall()
 
 @app.route("/")
@@ -29,24 +33,27 @@ def search():
     shop= productBD()
     return render_template("search.html",shop=shop)
 
-@app.route("/login") #Вход в аккаунт/Регистрация
-def login():
-    return render_template("login.html")
+@app.route("/proba") #Вход в аккаунт/Регистрация
+def proba():
+    return render_template("proba.html")
 
 
 @app.route("/about")#о нас
 def about():
     return render_template('about.html')
 
-@app.route("/basket")#о нас
-def basket():
-    shop= productBD()
+@app.route("/basket/<id>" )#корзина
+def basket(id):
+    shop= product_oneBD(id)
+    print(shop)
     return render_template('basket.html', shop=shop)
 
 @app.route("/news")#новости и акции
 def news():
     shop= productBD()
     return render_template('news.html', shop=shop)
+
+
 
 if __name__ =='__main__': #точка ввода нашей программы
     print("Сервер запущен:")
