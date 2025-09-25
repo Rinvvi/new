@@ -13,6 +13,11 @@ def integer():
 
     return render_template("proba.html",messege='Форма готова для принятия данных')
 
+
+
 if __name__=='__main__':
     print("run server")
+    print("user")
+    print("password")
+    print("messege")
     app.run()
